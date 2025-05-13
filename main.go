@@ -522,9 +522,9 @@ func cmdNew(c *cli.Context) error {
 	}
 
 	err = t.Execute(f, struct {
-		Title, Date, Tags, Categories string
+		Title, Date, Tags, Categories, DatetimeId string
 	}{
-		title, now.Format("2006-01-02 15:04"), "", "",
+		title, now.Format("2006-01-02 15:04"), "", "", now.Format("20060102150405"),
 	})
 	f.Close()
 	if err != nil {
